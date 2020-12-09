@@ -17,6 +17,7 @@ class Collapse extends StatelessWidget {
     this.onChange,
     this.showBorder = true,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+    this.backgroundColor = Colors.white,
   }) : super(key: key);
 
   /// 标题
@@ -40,13 +41,15 @@ class Collapse extends StatelessWidget {
   /// 是否显示border
   final bool showBorder;
 
+  final Color backgroundColor;
+
   static const Color borderColor = Color.fromRGBO(235, 237, 240, 1);
   static const Duration sleep = const Duration(milliseconds: 120);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: backgroundColor,
       key: key,
       child: Column(
         children: <Widget>[
