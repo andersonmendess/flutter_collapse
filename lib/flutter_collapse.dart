@@ -18,6 +18,8 @@ class Collapse extends StatelessWidget {
     this.showBorder = true,
     this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
     this.backgroundColor = Colors.white,
+    this.rotateX = 0.5,
+    this.rotateY = 1.0,
   }) : super(key: key);
 
   /// 标题
@@ -42,6 +44,9 @@ class Collapse extends StatelessWidget {
   final bool showBorder;
 
   final Color backgroundColor;
+
+  final double rotateX;
+  final double rotateY;
 
   static const Color borderColor = Color.fromRGBO(235, 237, 240, 1);
   static const Duration sleep = const Duration(milliseconds: 120);
@@ -71,7 +76,7 @@ class Collapse extends StatelessWidget {
                   AnimatedRotate(
                     duration: sleep,
                     child: icon,
-                    rotate: value ? 0.5 : 1,
+                    rotate: value ? rotateX : rotateY,
                   )
                 ],
               ),
